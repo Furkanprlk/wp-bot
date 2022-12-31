@@ -1,30 +1,4 @@
 const qrcode = require('qrcode-terminal');
-
-const MongoClient = require('mongodb').MongoClient;
-
-// Veritaban� ba�lant�s�n�n URL'si
-const url = 'mongodb+srv://NiqhtRide:Kelebek321@furkandatabase.xcziqm1.mongodb.net/test';
-//const url = 'mongodb://localhost:27017';
-
-// Veritabani adi
-const dbName = 'mydatabase';
-
-// Veritaban�na ba�lan
-MongoClient.connect(url, { useNewUrlParser: true }, (error, client) => {
-    if (error) throw error;
-
-    console.log('Veritaban�na ba�land�!');
-
-    // Veritaban�n� se�
-    const db = client.db(dbName);
-
-    // ��lemlerinizi burada yap�n...
-
-    // Ba�lant�y� kapat
-    client.close();
-});
-
-
 const { Client,LocalAuth  } = require('whatsapp-web.js');
 const client = new Client({
     authStrategy: new LocalAuth()

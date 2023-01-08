@@ -1,7 +1,9 @@
 const qrcode = require('qrcode-terminal');
+const puppeteer = require('puppeteer');
 const { Client,LocalAuth  } = require('whatsapp-web.js');
 const client = new Client({
-    authStrategy: new LocalAuth()
+    authStrategy: new LocalAuth(),
+    puppeteer:{headless: true, exheadless: true, executablePath: 'usr/bin/chromium-browser', args: ['--no-sandbox', '--disable-setuid-sandbox']}
 });
 
 let kaynak = '12813108039@c.us';
